@@ -1,0 +1,12 @@
+{
+  "name": "playwrighttesting",
+  "version": "1.0.0",
+  "description": "sample pw",
+  "main": "index.js",
+  "scripts": {},
+  "author": "nagarajan",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.32.3"
+  }
+}
