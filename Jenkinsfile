@@ -2,8 +2,19 @@ pipeline {
   agent any
   stages {
     stage('build') {
-      steps {
-        sh 'npm install'
+      parallel {
+        stage('build') {
+          steps {
+            sh 'rm package-lock.json'
+          }
+        }
+
+        stage('') {
+          steps {
+            sh 'npm install'
+          }
+        }
+
       }
     }
 
