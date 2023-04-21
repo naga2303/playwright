@@ -22,7 +22,10 @@ npm install'''
 
     stage('run') {
       steps {
-        sh 'npx playwright test'
+        sh '''npm install -D @playwright/test
+
+
+npx playwright test'''
       }
     }
 
