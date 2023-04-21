@@ -12,6 +12,7 @@ pipeline {
         stage('error') {
           steps {
             sh '''ls
+cd playwrightTesting
 npm install'''
           }
         }
