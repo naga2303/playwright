@@ -5,7 +5,7 @@ pipeline {
       parallel {
         stage('build') {
           steps {
-            sh 'rm package-lock.json'
+            sh 'cd playwrightTesting'
           }
         }
 
