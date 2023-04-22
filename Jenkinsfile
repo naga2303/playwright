@@ -23,7 +23,7 @@ npm install'''
     stage('run') {
       steps {
         sh '''npm install -D @playwright/test
-
+ls
 npx playwright test'''
       }
     }
