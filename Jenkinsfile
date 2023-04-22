@@ -24,9 +24,6 @@ npm install'''
       steps {
         sh '''npm install -D @playwright/test
 
-sudo chmod -R 777 playwrightTesting
-
-
 npx playwright test'''
       }
     }
