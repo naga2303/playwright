@@ -26,7 +26,7 @@ npm install'''
 cd playwrightTesting
 ls
 npm install
-npx playwright test'''
+npm run triggerheadless'''
       }
     }
 
