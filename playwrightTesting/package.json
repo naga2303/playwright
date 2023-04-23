@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "sample pw",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "triggerheadless":"npx playwright test tests"
+  },
   "author": "nagarajan",
   "license": "ISC",
   "devDependencies": {
