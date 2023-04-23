@@ -25,6 +25,7 @@ npm install'''
         sh '''ls
 cd playwrightTesting
 ls
+npm install
 npx playwright test'''
       }
     }
