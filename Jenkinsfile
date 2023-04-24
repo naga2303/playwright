@@ -32,7 +32,7 @@ npx playwright test'''
 
     stage('report') {
       steps {
-        emailext(subject: 'playwright', body: 'without report attached', saveOutput: true, to: 'nagaraj2319@gmail.com', attachLog: true, compressLog: true)
+        emailext(subject: 'playwright', body: 'without report attached', saveOutput: true, to: 'nagaraj2319@gmail.com', attachLog: true, compressLog: true, attachmentsPattern: 'playwrightTesting/playwright-report/index.html)
       }
     }
 
