@@ -22,12 +22,15 @@ npm install'''
 
     stage('run') {
       steps {
-        sh '''ls
+        node(label: 'agentChrome') {
+          sh '''ls
 cd playwrightTesting
 ls
 npm install
 npx playwright install
 npm run triggerheadless'''
+        }
+
       }
     }
 
