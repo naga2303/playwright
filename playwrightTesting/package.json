@@ -4,7 +4,8 @@
   "description": "sample pw",
   "main": "index.js",
   "scripts": {
-    "triggerheadless":"npx playwright test tests"
+    "triggerheadless":"npx playwright test tests --project=chromium",
+    "triggerheadlessFirefox":"npx playwright test tests --project=firefox"
   },
   "author": "nagarajan",
   "license": "ISC",
