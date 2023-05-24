@@ -1,16 +1,20 @@
 pipeline {
-  agent {
-    docker {
-      filename 'dockerfile'
-      dir '.'
-    }
-  }
+  agent any
+   
   stages{
     stage('docker image build')
     {
       steps{
-        sh 'docker build -t pwImage:tag'
+        script {
+                    def imageName = 'pwTest'
+                    def imageTag = 'pwTest123'
+                    def dockerfilePath = './dockerfile'
+
+                    // Build the Docker image
+                    docker.build("${imageName}:${imageTag}", "-f ${dockerfilePath} .")
+        
       }
+    }
     }
     stage('docker cmd')
     {
