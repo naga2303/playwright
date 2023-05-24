@@ -1,36 +1,18 @@
 pipeline {
-  agent any
+  agent {
+    dockerfile{
+      filename 'dockerfile'
+      dir '.'
+    }
+  }
   stages {
-    stage('build') {
-      parallel {
-        stage('build') {
-          steps {
-            sh 'cd playwrightTesting'
-          }
-        }
-
-        stage('error') {
-          steps {
-            sh '''ls
-cd playwrightTesting
-npm install'''
-          }
-        }
 
       }
     }
 
     stage('run') {
       steps {
-        node(label: 'agentChrome') {
-          sh '''ls
-cd playwrightTesting
-ls
-npm install
-npx playwright install
-npm run triggerheadless'''
-        }
-
+       echo 'hello world'
       }
     }
 
