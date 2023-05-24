@@ -16,11 +16,11 @@ pipeline {
       }
     }
     }
-    stage('docker cmd')
-    {
-      steps{
-        sh 'echo pass 1'
-      }
-    }
+   stage('Publish Report') {
+            steps {
+                // Archive Playwright report files
+                archiveArtifacts(artifacts: './playwrightTests/playwrightTesting/playwright-report/index.html')
+            }
+        }
   }
 }
