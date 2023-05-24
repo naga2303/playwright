@@ -8,11 +8,15 @@ pipeline {
   stages{
     stage('docker image build')
     {
-      sh 'docker build -t pwImage:tag'
+      steps{
+        sh 'docker build -t pwImage:tag'
+      }
     }
     stage('docker cmd')
     {
-      sh 'echo pass 1'
+      steps{
+        sh 'echo pass 1'
+      }
     }
   }
 }
