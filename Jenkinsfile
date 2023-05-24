@@ -19,6 +19,7 @@ pipeline {
    stage('Publish Report') {
             steps {
                 // Archive Playwright report files
+                sh 'ls'
                 archiveArtifacts(artifacts: 'playwrightTests/playwrightTesting/playwright-report/index.html')
             }
         }
