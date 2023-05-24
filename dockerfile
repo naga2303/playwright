@@ -6,4 +6,4 @@ WORKDIR /playwrightTests/playwrightTesting
 RUN npm install
 RUN npx @playwright/test install
 RUN npx playwright install-deps
-RUN npm run triggerSmokeTests-headless
+RUN npm run triggerheadless
