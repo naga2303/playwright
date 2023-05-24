@@ -6,8 +6,8 @@ pipeline {
     {
       steps{
         script {
-                    def imageName = 'pwTest'
-                    def imageTag = 'pwTest123'
+                    def imageName = 'pwtest'
+                    def imageTag = 'tag'
                     def dockerfilePath = './dockerfile'
 
                     // Build the Docker image
