@@ -1,3 +1,4 @@
+FROM ubuntu:latest
 FROM mcr.microsoft.com/playwright:v1.32.0-jammy
 USER root
 RUN mkdir /playwrightTests
