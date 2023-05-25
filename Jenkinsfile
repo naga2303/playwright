@@ -16,7 +16,7 @@ pipeline {
       }
     }
     }
-    stage('docker run build')
+  /*  stage('docker run build')
     {
       steps{
         script {
@@ -24,7 +24,7 @@ pipeline {
         
       }
     }
-    }
+    }*/
    stage('Publish Report') {
             steps {
                 // Archive Playwright report files
