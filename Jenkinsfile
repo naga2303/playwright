@@ -6,7 +6,7 @@ pipeline {
     {
       steps{
         script {
-                    def imageName = 'pwtest'
+                    def imageName = 'pwtest1'
                     def imageTag = 'tag'
                     def dockerfilePath = './dockerfile'
 
@@ -20,7 +20,7 @@ pipeline {
     {
       steps{
         script {
-                  docker.run("-it -d --name pwtestContainer pwtest /bin/bash") 
+                  docker.run("-it -d --name pwtestContainer pwtest1 /bin/bash") 
         
       }
     }
