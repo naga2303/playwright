@@ -30,9 +30,10 @@ pipeline {
                 // Archive Playwright report files
                 //sh 'ls'
                 //archiveArtifacts(artifacts: 'playwrightTests/playwrightTesting/playwright-report/index.html')
-                echo 'My mistake!!'                
-                sh 'pwd'
-                sh 'dir'
+                echo 'My mistake!!'
+                sh 'ls'
+               // sh 'pwd'
+                //sh 'dir'
                 //pwd
                // docker run -it -d pwtest1:tag
                //sh'docker run -it -d pwtest1:tag /bin/bash'
