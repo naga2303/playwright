@@ -32,7 +32,7 @@ pipeline {
                 //archiveArtifacts(artifacts: 'playwrightTests/playwrightTesting/playwright-report/index.html')
                 echo 'My mistake!!'                
                 sh 'pwd'
-                pwd
+                //pwd
                // docker run -it -d pwtest1:tag
                //sh'docker run -it -d pwtest1:tag /bin/bash'
             }
