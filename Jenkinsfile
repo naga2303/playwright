@@ -28,8 +28,9 @@ pipeline {
    stage('Publish Report') {
             steps {
                 // Archive Playwright report files
-                sh 'ls'
-                archiveArtifacts(artifacts: 'playwrightTests/playwrightTesting/playwright-report/index.html')
+                //sh 'ls'
+                //archiveArtifacts(artifacts: 'playwrightTests/playwrightTesting/playwright-report/index.html')
+                echo 'My mistake!!'
             }
         }
   }
