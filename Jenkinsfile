@@ -16,6 +16,15 @@ pipeline {
       }
     }
     }
+    stage('docker run build')
+    {
+      steps{
+        script {
+                  docker run -it -d --name pwtestContainer pwtest /bin/bash
+        
+      }
+    }
+    }
    stage('Publish Report') {
             steps {
                 // Archive Playwright report files
