@@ -31,6 +31,7 @@ pipeline {
                 //sh 'ls'
                 //archiveArtifacts(artifacts: 'playwrightTests/playwrightTesting/playwright-report/index.html')
                 echo 'My mistake!!'
+               sh'docker run -it -d pwtest1:tag /bin/bash'
             }
         }
   }
