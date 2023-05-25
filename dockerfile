@@ -7,4 +7,3 @@ RUN npm install
 RUN npx @playwright/test install
 RUN npx playwright install-deps
 RUN npm install allure-playwright
-RUN npm run triggerheadless
