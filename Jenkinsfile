@@ -20,7 +20,7 @@ pipeline {
     {
       steps{
         script {
-                  docker run -it -d --name pwtestContainer pwtest
+                  docker.run("-it -d --name pwtestContainer pwtest /bin/bash") 
         
       }
     }
