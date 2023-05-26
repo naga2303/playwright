@@ -36,8 +36,9 @@ pipeline {
                 //sh 'dir'
                 //pwd
                 script {
-               docker.run("--name pwtestContainer pwtest1") 
-                }
+                 def dockerImage = 'pwtest1:tag'
+                  docker.image(dockerImage).run('pwtest1:tag')
+                    }
                //sh'docker run -it -d pwtest1:tag /bin/bash'
             }
         }
