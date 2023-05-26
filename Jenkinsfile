@@ -37,7 +37,7 @@ pipeline {
                 //pwd
                 script {
                  def dockerImage = 'pwtest1:tag'
-                  docker.image(dockerImage).run('pwtest1:tag')
+                  docker.image(dockerImage).run()
                     }
                //sh'docker run -it -d pwtest1:tag /bin/bash'
             }
