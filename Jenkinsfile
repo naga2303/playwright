@@ -31,11 +31,11 @@ pipeline {
                 //sh 'ls'
                 //archiveArtifacts(artifacts: 'playwrightTests/playwrightTesting/playwright-report/index.html')
                 echo 'My mistake!!'
-                sh 'ls'
+               // sh 'ls'
                // sh 'pwd'
                 //sh 'dir'
                 //pwd
-               // docker run -it -d pwtest1:tag
+                docker run pwtest1:tag
                //sh'docker run -it -d pwtest1:tag /bin/bash'
             }
         }
