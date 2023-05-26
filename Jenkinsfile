@@ -35,7 +35,9 @@ pipeline {
                // sh 'pwd'
                 //sh 'dir'
                 //pwd
+                script {
                docker.run("--name pwtestContainer pwtest1") 
+                }
                //sh'docker run -it -d pwtest1:tag /bin/bash'
             }
         }
