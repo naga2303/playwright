@@ -62,6 +62,10 @@ pipeline {
         steps {
           bat '''
           cd playwrightTesting
+          npm install
+          npx @playwright/test install
+          npx playwright install-deps
+          npm install allure-playwright
           npm run triggerheadless
           '''
         }
