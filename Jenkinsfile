@@ -66,6 +66,7 @@ pipeline {
       {
         steps {
           bat '''
+          cd playwrightTesting
           npm run triggerheadless
           '''
         }
