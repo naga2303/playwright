@@ -5,7 +5,7 @@ pipeline {
     stage('docker image build')
     {
       steps{
-        script {
+       /* script {
                     def imageName = 'pwtest1'
                     def imageTag = 'tag'
                     def dockerfilePath = './dockerfile'
@@ -13,7 +13,10 @@ pipeline {
                     // Build the Docker image
                     docker.build("${imageName}:${imageTag}", "-f ${dockerfilePath} .")
         
-      }
+      }*/
+         bat '''
+          docker build . --file dockerfile -t pwtest1
+          '''
     }
     }
   /*  stage('docker run build')
@@ -35,19 +38,22 @@ pipeline {
                // sh 'pwd'
                 //sh 'dir'
                 //pwd
-                script {
+               /* script {
                  def dockerImage = 'pwtest1:tag'
                   docker.image(dockerImage).run('--name pwcontainer') 
-                    }
+                    }*/
                  
                //sh'docker run -it -d pwtest1:tag /bin/bash'
+               bat '''
+                    docker run -d -t --name pwcontainer pwtest1:latest
+                   '''
             }
         }
       stage('docker start')
       {
         steps {
           bat '''
-          docker start pwcontainer
+          docker exec pwcontainer ls -l
           '''
         }
       }
@@ -55,7 +61,6 @@ pipeline {
       {
         steps {
           bat '''
-          docker exec pwcontainer ls -l
           cd playwrightTesting
           npm run triggerheadless
           '''
