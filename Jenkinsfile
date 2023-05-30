@@ -45,26 +45,28 @@ pipeline {
                  
                //sh'docker run -it -d pwtest1:tag /bin/bash'
                bat '''
-                    docker run -d -t --name pwcontainer pwtest1:latest
+                    docker run --name pwcontainer pwtest1:latest
                    '''
             }
         }
       stage('docker start')
       {
         steps {
-          bat '''
+        /*  bat '''
           docker exec pwcontainer ls -l
+          cd playwrightTesting
+          npm run triggerheadless
           '''
-        }
+        }*/
       }
       stage('docker exec')
       {
         steps {
-          bat '''
+        /*  bat '''
           cd playwrightTesting
           npm run triggerheadless
           '''
-        }
+        }*/
       }
   }
 }
