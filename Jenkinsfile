@@ -39,7 +39,7 @@ pipeline {
                  def dockerImage = 'pwtest1:tag'
                   docker.image(dockerImage).run('--name pwcontainer') {
                   //  container ->
-                    sh "docker exec pwcontainer"
+                    start "docker exec pwcontainer"
                     //sh "npm run triggerheadless"
                   }
                     }
