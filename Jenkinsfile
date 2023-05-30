@@ -25,7 +25,7 @@ pipeline {
       }
     }
     }*/
-   stage('Publish Report') {
+   stage('docker image-run') {
             steps {
                 // Archive Playwright report files
                 //sh 'ls'
@@ -38,16 +38,28 @@ pipeline {
                 script {
                  def dockerImage = 'pwtest1:tag'
                   docker.image(dockerImage).run('--name pwcontainer') 
-                  /*{
-                  //  container ->
-                    "docker exec pwcontainer"
-                    sh "npm run triggerheadless"
-                  }*/
-                   docker start pwcontainer
                     }
                  
                //sh'docker run -it -d pwtest1:tag /bin/bash'
             }
         }
+      stage('docker start')
+      {
+        steps {
+          bat '''
+          docker start pwcontainer
+          '''
+        }
+      }
+      stage('docker exec')
+      {
+        steps {
+          bat '''
+          docker exec pwcontainer ls -l
+          cd playwrightTesting
+          npm run triggerheadless
+          '''
+        }
+      }
   }
 }
