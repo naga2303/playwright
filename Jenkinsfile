@@ -42,7 +42,7 @@ pipeline {
                   //  container ->
                     //"docker exec pwcontainer"
                     //sh "npm run triggerheadless"
-                  }//
+                 // }
                     }
                //sh'docker run -it -d pwtest1:tag /bin/bash'
             }
