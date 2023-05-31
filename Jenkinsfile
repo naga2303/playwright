@@ -18,5 +18,12 @@ pipeline {
                    '''
             }
         }
+    stage('docker copy'){
+      steps{
+        bat '''
+            docker cp pwcontainer:/pw/playwrightTesting/playwright.config.js D:/GitHub/playwright
+            '''
+      }
+    }
   }
 }
