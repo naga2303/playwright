@@ -21,13 +21,13 @@ pipeline {
     stage('docker copy'){
       steps{
         bat '''
-            docker cp pwcontainer:/playwrightTests/playwrightTesting/playwright-report %WORKSPACE%
+            docker cp pwcontainer:/playwrightTests/playwrightTesting/playwright-report/index.html %WORKSPACE%
             '''
       }
     }
     stage('publish report'){
       steps{
-          publishHTML([allowMissing: true, alwaysLinkToLastBuild: true, keepAll: true, reportDir: 'playwright-report/', reportFiles: 'index.html', reportName: 'UI HTML Report', reportTitles: ''])
+          publishHTML([allowMissing: true, alwaysLinkToLastBuild: true, keepAll: true, reportDir: '.', reportFiles: 'index.html', reportName: 'UI HTML Report', reportTitles: ''])
 
       }
     }
