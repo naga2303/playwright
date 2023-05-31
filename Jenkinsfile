@@ -27,7 +27,7 @@ pipeline {
     }
     stage('publish report'){
       steps{
-          publishHTML(reportDir: '%WORKSPACE%\\playwright-report', reportFiles: 'index.html', displayName: 'UIReport')
+          publishHTML(reportDir: '%WORKSPACE%\\playwright-report', reportFiles: 'index.html', reportName: 'UIReport')
 
       }
     }
