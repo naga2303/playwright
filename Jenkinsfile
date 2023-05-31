@@ -21,8 +21,14 @@ pipeline {
     stage('docker copy'){
       steps{
         bat '''
-            docker cp pwcontainer:/playwrightTests/playwrightTesting/playwright-report/index.html %WORKSPACE%\\report
+            docker cp pwcontainer:/playwrightTests/playwrightTesting/playwright-report %WORKSPACE%
             '''
+      }
+    }
+    stage('publish report'){
+      steps{
+          htmlPublisher(reportDir: '%WORKSPACE%\\playwright-report', reportFiles: 'index.html', displayName: 'UIReport')
+
       }
     }
   }
