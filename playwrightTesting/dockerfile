@@ -4,6 +4,7 @@ RUN mkdir /playwrightTests
 COPY . /playwrightTests
 WORKDIR /playwrightTests/playwrightTesting/
 # RUN npm ci
+RUN npm install
 RUN npx @playwright/test install
 RUN npx playwright install-deps
 RUN npm install allure-playwright
