@@ -6,7 +6,7 @@ pipeline {
     {
       steps{
          bat '''
-          docker build . --file dockerfile -t pwtest1
+          docker build . --file /playwrightTesting/dockerfile -t pwtest1
           '''
             }
     }
