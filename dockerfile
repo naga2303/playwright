@@ -3,8 +3,8 @@ USER root
 RUN mkdir /playwrightTests
 COPY . /playwrightTests
 WORKDIR /playwrightTests/playwrightTesting/
-RUN npm install
-RUN npx @playwright/test install
-RUN npx playwright install-deps
-RUN npm install allure-playwright
-CMD npm run triggerheadless
+RUN npm ci
+#RUN npx @playwright/test install
+#RUN npx playwright install-deps
+#RUN npm install allure-playwright
+CMD ["npm", "run", "triggerheadless"]
