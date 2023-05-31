@@ -27,7 +27,7 @@ pipeline {
     }
     stage('publish report'){
       steps{
-          publishHTML([allowMissing: true, alwaysLinkToLastBuild: true, keepAll: true, reportDir: 'playwright-report/index.html', reportFiles: 'index.html', reportName: 'UI HTML Report', reportTitles: ''])
+          publishHTML([allowMissing: true, alwaysLinkToLastBuild: true, keepAll: true, reportDir: 'playwright-report/', reportFiles: 'index.html', reportName: 'UI HTML Report', reportTitles: ''])
 
       }
     }
