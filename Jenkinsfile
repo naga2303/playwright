@@ -21,7 +21,7 @@ pipeline {
     stage('docker copy'){
       steps{
         bat '''
-            docker cp pwcontainer:/playwrightTests/playwrightTesting/Allure D:/GitHub/playwright
+            docker cp pwcontainer:/playwrightTests/playwrightTesting/allure-results D:\\GitHub\\playwright
             '''
       }
     }
