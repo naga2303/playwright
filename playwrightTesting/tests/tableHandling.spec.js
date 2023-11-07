@@ -11,7 +11,10 @@ Get multiple selected data from the table
 */
 const { test, expect } = require('@playwright/test');
 
-test.beforeAll(async({page})=>{
+
+
+
+test('tth',async({page})=>{
     await page.goto('https://datatables.net/extensions/select/examples/initialisation/checkbox.html')
     console.log('who is first?')
 })
