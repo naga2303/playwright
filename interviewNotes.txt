@@ -1,0 +1,19 @@
+1) What is spec.js
+-> Spec.js is extension which is used to mark that the file is a test-case file. It specifically denotes that
+the file contains test-suites, test-cases etc.
+2) what is require
+-> require is a function in the node.js module which is used to import the modules. It take module name as 
+argument and returns the exports object of that module so that the functionality of that module is used.
+
+3) What is instance
+Instance is an object that is created for a class blueprint. 
+4) What is Page?
+-> It is a class, it provides methods to perform the action in the browsers. The browser has multiple tabs, 
+each tab represent a page. Once browser instance can have multiple page instances.
+5) what is async({page})?
+-> async refers that the function is asynchronous and it allows to use await and also handles the promises
+in a more synchronous manner.
+--> {page} -> it's extracting the page property from the object passed as an argument to the function.
+This is used when we expect object as an parameter so that the methods/properties of that class/functions can be 
+used.By representing like this, page can be used as an variable in the code block without explicitly 
+accessing the properties of the object.
