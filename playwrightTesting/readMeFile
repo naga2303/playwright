@@ -1,0 +1,4 @@
+1) what is the use of scope?
+Syntax : ':scope'
+It is used when we need to focus or useful for constraining the scope of a selector to certain root elements.
+It allows for more efficient and targeted searching. 
