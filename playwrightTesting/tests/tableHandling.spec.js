@@ -45,7 +45,7 @@ const { test, expect } = require('@playwright/test');
     
 })*/
 
-test('Get last row of  the table',async({page})=>{
+/*test('Get last row of  the table',async({page})=>{
     await page.goto('https://datatables.net/extensions/select/examples/initialisation/checkbox.html')
     //First search for the people with office as Tokyo – you can directly search this from the search bar.
 
@@ -55,4 +55,25 @@ test('Get last row of  the table',async({page})=>{
     await page.waitForTimeout(5000)
     const last = await pageRows.locator('tr').last().locator(':scope',{hasText:'Tokyo'}).locator('td.select-checkbox').click()
     await page.waitForTimeout(5000)
+}) */
+
+/*test("Increase the row size and get al the names",async({page})=>{
+    await page.goto('https://datatables.net/extensions/select/examples/initialisation/checkbox.html')
+    await page.locator('#example_length>label>select').selectOption('25')
+   await page.waitForTimeout(5000)
+   const table = await page.locator('#example tbody tr').locator(':scope').locator('td.sorting_1').allInnerTexts()
+   await table.forEach(names =>console.log(names))
+   
+    
+}) */
+// Get all the names who lives in the place tokyo
+test("Search and get the names from the filtered info",async({page})=>{
+    await page.goto('https://datatables.net/extensions/select/examples/initialisation/checkbox.html')
+    await page.locator('#example_length>label>select').selectOption('25')
+    await page.waitForTimeout(5000)
+    await page.locator('#example_filter label input').fill('Tokyo')
+    await page.locator('example tbody tr').locator(':scope').locator('td >> nth=1').click()
+    const names = await page.locator('example tbody tr').locator(':scope').locator('td > nth=1').allInnerTexts()
+    await names.forEach(nameT=> console.log(nameT))
 })
+
