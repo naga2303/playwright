@@ -101,7 +101,7 @@ const { test, expect } = require('@playwright/test');
   await console.log(ar)
 })*/
 
-test("Data grid testing testleaf website- just expand the inner table",async({page})=>{
+/*test("Data grid testing testleaf website- just expand the inner table",async({page})=>{
     await page.goto('https://www.leafground.com/grid.xhtml')
     const rows = await page.locator('tbody.ui-datatable-data.ui-widget-content > tr.ui-datatable-selectable').all()
     //const rowCount = await rows.count()
@@ -112,4 +112,31 @@ test("Data grid testing testleaf website- just expand the inner table",async({pa
         await i.getByRole('gridcell').nth(1).click()
         await page.waitForTimeout(4000)
     }
+})*/
+
+test("Get the data from the inner table",async({page})=>{
+    await page.goto('https://www.leafground.com/grid.xhtml')
+    const rows = await page.locator('.ui-datatable-tablewrapper table tbody tr.ui-datatable-selectable').all()
+    let data =[]
+    for (let i of rows)
+    {
+        await i.getByRole('gridcell').nth(1).click()
+        await page.waitForTimeout(5000)
+        const innerTable = await page.locator('.ui-datatable-tablewrapper table tbody tr.ui-expanded-row-content')
+        const innerRows = await innerTable.locator('.ui-datatable-tablewrapper tbody tr').all()
+        for(let j of innerRows)
+        {
+            const customerName = await j.getByRole('gridcell').nth(1).allInnerTexts()
+            const price = await j.getByRole('gridcell').nth(3).allInnerTexts()
+            if(customerName && price)
+            data.push({
+                customerName:customerName,
+                price:price
+            })
+            customerName.forEach((cnames)=>{console.log(cnames)})
+        }
+        //const customerName = await innerRows.getByRole('gridcell').nth(1).locator('span')
+        //await console.log(customerName)
+    }
+    console.log(data)
 })
