@@ -67,13 +67,49 @@ const { test, expect } = require('@playwright/test');
     
 }) */
 // Get all the names who lives in the place tokyo
-test("Search and get the names from the filtered info",async({page})=>{
+/*test("Search and get the names from the filtered info",async({page})=>{
     await page.goto('https://datatables.net/extensions/select/examples/initialisation/checkbox.html')
     await page.locator('#example_length>label>select').selectOption('25')
     await page.waitForTimeout(5000)
     await page.locator('#example_filter label input').fill('Tokyo')
-    await page.locator('example tbody tr').locator(':scope').locator('td >> nth=1').click()
-    const names = await page.locator('example tbody tr').locator(':scope').locator('td > nth=1').allInnerTexts()
-    await names.forEach(nameT=> console.log(nameT))
+    //await page.locator('example tbody tr').locator(':scope').locator('td >> nth=1').click()
+    const names = await page.locator('table#example tbody tr').locator(':scope').locator('td').allInnerTexts()
+    await names.forEach((nameT)=> {console.log(nameT)})
 })
+*/
 
+/*test("Collect multiple selected rows from a table",async({page})=>{
+    await page.goto('https://demo.guru99.com/test/web-table-element.php#')
+    const rows = await page.locator('.dataTable tbody tr')
+    const rowCount =await rows.count()
+    let ar = new Array()
+    for (let i =0;i<rowCount;i++)
+    {
+        let row = rows.nth(i)
+        let companyName = await row.locator('td:nth-child(1)').allInnerTexts()
+        let prevprice = await row.locator('td:nth-child(3)').allInnerTexts()
+        let currprice = await row.locator('td:nth-child(3)').allInnerTexts()
+        if(companyName && prevprice && currprice)
+        {
+           ar.push({
+            companyName:companyName,
+            prevprice:prevprice,
+            currprice:currprice
+           })
+        }
+    }
+  await console.log(ar)
+})*/
+
+test("Data grid testing testleaf website- just expand the inner table",async({page})=>{
+    await page.goto('https://www.leafground.com/grid.xhtml')
+    const rows = await page.locator('tbody.ui-datatable-data.ui-widget-content > tr.ui-datatable-selectable').all()
+    //const rowCount = await rows.count()
+    for (let i of rows)
+    {
+        const currentRow = i.getByRole('gridcell').nth(2)
+       // const currentName = await currentRow.innerText()
+        await i.getByRole('gridcell').nth(1).click()
+        await page.waitForTimeout(4000)
+    }
+})
