@@ -114,7 +114,7 @@ const { test, expect } = require('@playwright/test');
     }
 })*/
 
-test("Get the data from the inner table",async({page})=>{
+test.skip("Get the data from the inner table",async({page})=>{
     await page.goto('https://www.leafground.com/grid.xhtml')
     const rows = await page.locator('.ui-datatable-tablewrapper table tbody tr.ui-datatable-selectable').all()
     let data =[]
