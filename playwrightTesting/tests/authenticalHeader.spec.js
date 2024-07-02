@@ -1,3 +1,5 @@
+///@ts-check
+
 const { test, expect } = require('@playwright/test');
 
 test.describe("Flipkart", () => {
@@ -8,6 +10,7 @@ test.describe("Flipkart", () => {
         page = await context.newPage();
     })
     test("Navigate", async () => {
+        await page.setViewportSize({ width: 1920, height: 1080 });
         await page.goto("https://www.flipkart.com/");
         // await page.maximize()
         await page.locator("//div[@aria-label='Electronics']").hover();
