@@ -22,6 +22,7 @@ test("To test the external Code set",async({page})=>{
     const allZips = await page.locator("//a[contains(@href, '.zip')]").all()
     const allDoc = await page.locator("//a[contains(@href, '.doc')]").all()
     const allxlsx = await page.locator("//a[contains(@href, '.xlsx')]").all()
+    const allxls = await page.locator("//a[contains(@href, '.xls')]").all()
 
    
 
