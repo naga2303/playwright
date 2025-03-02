@@ -33,6 +33,7 @@ test.describe("To test the dynamic table with checkbox",()=>{
                 await page.locator("//table[@id='countries']/tbody/tr["+i+"]/td[1]/input").check()
             }
         }
+        
         await page.screenshot({path:"table.png",fullPage:true})
         await testInfo.attach('screenshot',{body:'table.png',contentType:'img/png'})
         allure.attachment('table.png','tableScreenshot','img/png','png')
